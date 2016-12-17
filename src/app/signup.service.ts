@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import {USER} from "./mocks/user";
+import {User} from "./models/user";
 @Injectable()
 export class SignupService {
+  user:User[];
   getUserData(){
-    return USER;
+    return this.user;
   }
-  constructor() { }
+  constructor() {
+    this.user=USER;
+  }
 
 }
