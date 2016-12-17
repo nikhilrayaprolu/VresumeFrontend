@@ -11,12 +11,15 @@ import { CV1Component } from './cv1/cv1.component';
 import {CV1Service} from "./cv1.service";
 import { CV2Component } from './cv2/cv2.component';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import { EmployerComponent } from './employer/employer.component';
+import {EmployerService} from "./employer.service";
 
 const appRoutes: Routes = [
   { path: 'signup', component: SignupComponentComponent },
   { path: 'signin', component: SignInComponent},
   { path: 'cv', component: CV1Component},
   { path: 'cv2', component: CV2Component},
+  { path: 'employer', component: EmployerComponent},
 
 
 ];
@@ -29,7 +32,8 @@ const appRoutes: Routes = [
     SignInComponent,
     CV1Component,
     CV2Component,
-    FileSelectDirective, FileDropDirective
+    FileSelectDirective, FileDropDirective,
+    EmployerComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     SignupService,
-    CV1Service
+    CV1Service,
+    EmployerService,
   ],
   bootstrap: [AppComponent]
 })
