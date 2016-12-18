@@ -16,12 +16,16 @@ import {EmployerService} from "./employer.service";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import {UserService} from "./user.service";
+import { PostJobComponent } from './post-job/post-job.component';
+import {PostJobService} from "./post-job.service";
+
 const appRoutes: Routes = [
   { path: 'signup', component: SignupComponentComponent },
   { path: 'signin', component: SignInComponent},
   { path: 'cv', component: CV1Component},
   { path: 'cv2', component: CV2Component},
   { path: 'employer', component: EmployerComponent},
+  { path: 'job', component: PostJobComponent},
 
 
 ];
@@ -35,7 +39,8 @@ const appRoutes: Routes = [
     CV1Component,
     CV2Component,
     FileSelectDirective, FileDropDirective,
-    EmployerComponent
+    EmployerComponent,
+    PostJobComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +53,7 @@ const appRoutes: Routes = [
     CV1Service,
     EmployerService,
     UserService,
+    PostJobService,
   ],
   bootstrap: [AppComponent]
 })
