@@ -15,7 +15,7 @@ export class SignupComponentComponent implements OnInit {
   email='';
   phone='';
   dob='';
-  userid='';
+
   usernamefinal:User[];
   submit(){
 
