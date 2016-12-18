@@ -1,0 +1,70 @@
+<div class="container">
+
+  <div class="alert alert-info">
+    <strong>CONGRATS!</strong> You have successfully registered.
+  </div>
+
+  <h2>Professional and Educational details</h2>
+
+  <form name="cv2form">
+
+    <div class = "jumbotron">
+      <h3>Your contact information</h3>
+      <div class="form-group">
+        <label for="name">Please Enter your Full name:</label>
+        <input type="text" class="form-control" id="name" ngModel="FullName" name="fullName">
+      </div>
+      <div class="form-group">
+        <label for="mno">Enter your Mobile No.:</label>
+        <input type="number" ngModel="MobileNumber" class="form-control" id="mno" name="mobileNumber">
+      </div>
+      <div class="form-group">
+        <label for="loc">Current Location:</label>
+        <input type="text" class="form-control" id="loc" ngModel="location" name="location">
+      </div>
+    </div>
+
+
+    <div class = "jumbotron">
+      <h3>Your work experience</h3>
+      <div class="form-inline">
+        <div class="form-group">
+          <label for="wexp">How much work experience do you have?:</label>
+          <input type="number" class="form-control" id="wexp" ngModel="wexp" name="wexp"><span>&nbsp;&nbsp;Years</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pd">Profile Description</label>
+        <input type="text" class="form-control" id="pd" ngModel="profile_desc" name="profileDesc">
+      </div>
+      <div class="form-group">
+        <label for="ks">What are your KEY skills?:</label>
+        <input type="text" class="form-control" id="ks" ngModel="key_skills" name="keySkills">
+      </div>
+      <div class="form-group">
+        <label for="industry">Which industry do you want to work in:</label>
+        <input type="text" class="form-control" id="industry" ngModel="industry" name="industry">
+      </div>
+      <div class="form-group">
+        <label for="func-area">What functional area do you want to work in?:</label>
+        <input type="text" class="form-control" id="func-area" ngModel="functional_area" name="functionalArea">
+      </div>
+    </div>
+
+    <div class = "jumbotron">
+      <h3>Your educational background</h3>
+      <button class="btn button" (click)="incrementeducation()">+</button>
+      <div class="form-group">
+        <div *ngFor=" let number of getNumber(noOfEducations)">
+
+          <label for="degree{{number}}">List a degree:</label>
+          <input type="text" class="form-control" id="degree{{number}}" ngModel="arr[number]" name="arr{{number}}">
+          {{arr[number]}}
+        </div>
+
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="submit()">Next</button>
+    </div>
+  </form>
+
+</div>
