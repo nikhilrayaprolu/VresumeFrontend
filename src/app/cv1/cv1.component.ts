@@ -31,7 +31,7 @@ export class CV1Component implements OnInit {
   submit(){
 
     this.cvfilled=this.CV1Service.getCVData().filter((elem,i,array)=>{
-      return elem.id==1;
+      return elem.id==2;
 
     });
     console.log(this.cvfilled);
