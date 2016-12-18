@@ -18,7 +18,7 @@ script:
 - ng lint
 
 after_success:
--ng ghpages
+- ng github-pages:deploy
 
 cache:
 directories: node_modules
