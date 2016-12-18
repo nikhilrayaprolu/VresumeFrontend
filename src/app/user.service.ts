@@ -9,14 +9,14 @@ export class UserService {
     this.loggedIn = !!localStorage.getItem('auth_token');
   }
 
-  login(name, password) {
+  login(username, password) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
     return this.http
       .post(
         'http://localhost:8081/api/authenticate',
-        JSON.stringify({ name, password }),
+        JSON.stringify({ username, password }),
         { headers }
       )
       .map(res => res.json())
@@ -44,7 +44,7 @@ export class UserService {
       .map((res) => {
       console.log(res)
         if (res.success) {
-          this.login(userdata.name,userdata.password).subscribe((result) => {
+          this.login(userdata.username,userdata.password).subscribe((result) => {
             if (result) {
               console.log("successfully loggedin")
             };
