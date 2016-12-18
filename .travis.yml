@@ -11,13 +11,14 @@ before_install:
 
 before_script:
 - ng build
+- npm install angular-cli-ghpages --save-dev
 
 script:
 - ng test --watch=false
 - ng lint
 
 after_success:
--ng github-pages:deploy
+-ng ghpages
 
 cache:
 directories: node_modules
