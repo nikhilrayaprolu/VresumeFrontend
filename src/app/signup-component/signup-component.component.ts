@@ -20,7 +20,7 @@ export class SignupComponentComponent implements OnInit {
   usernamefinal:User[];
   submit(){
 
-    this.UserService.register({name:this.username,password:this.password,FirstName:this.FirstName,LastName:this.LastName,email:this.email,
+    this.UserService.register({username:this.username,password:this.password,FirstName:this.FirstName,LastName:this.LastName,email:this.email,
         phone:this.phone,
     dob:this.dob}).subscribe((result) => {
       if (result) {
