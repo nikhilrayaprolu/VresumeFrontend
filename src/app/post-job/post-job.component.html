@@ -1,0 +1,84 @@
+<div class="container">
+
+
+
+  <h2> Post a job advertisement!</h2>
+
+  <form name="jobform">
+
+    <div class = "jumbotron">
+      <h3>Job description</h3>
+      <div class="form-group">
+        <label for="jobTitle">Job Title</label>
+        <input type="text" class="form-control" id="jobTitle" ngModel="jobTitle" name="jobTitle">
+      </div>
+      <div class="form-group">
+        <label for="jobDesc">Job Description(Designation)</label>
+        <input type="text" class="form-control" id="jobDesc" ngModel="jobDescription" name="jobDescription">
+      </div>
+      <div class="form-group">
+        <label for="industry">Industry</label>
+        <input type="text" class="form-control" id="industry" ngModel="industry" name="industry">
+      </div>
+      <button class="btn button" (click)="incrementresp()">+</button>
+      <div class="form-group">
+        <div *ngFor=" let number of getNumber(noOfResp)">
+
+          <label for="resp{{number}}">Responsibilities (Work Profile):</label>
+          <input type="text" class="form-control" id="resp{{number}}" ngModel="resp{{number}}" name="resp{{number}}">
+          {{resp[number]}}
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class = "jumbotron">
+      <h3>Optional Details</h3>
+        <div class="form-group">
+          <label for="vac">No. of vacancies available(please enter a number):</label>
+          <input type="number" class="form-control" id="vac" ngModel="vac" name="vac">
+        </div>
+      <div class="form-group">
+        <label for="timing">Work Timings:</label>
+        <input type="text" class="form-control" id="timing" ngModel="timing" name="timing">
+      </div>
+      <div class="form-group">
+        <label for="salary">Salary Range:</label>
+        <input type="text" class="form-control" id="salary" ngModel="salary" name="salary">
+      </div>
+      <div class="form-group">
+        <label for="perks">Bonuses and Perks (if any)</label>
+        <input type="text" class="form-control" id="perks" ngModel="perks" name="perks">
+      </div>
+    </div>
+
+
+    <div class = "jumbotron">
+      <h3>Qualifications</h3>
+      <button class="btn button" (click)="incrementskills()">+</button>
+      <div class="form-group">
+        <div *ngFor=" let number of getNumber(noOfSkills)">
+
+          <label for="skill{{number}}">List required skills:</label>
+          <input type="text" class="form-control" id="skill{{number}}" ngModel="skill{{number}}" name="skill{{number}}">
+          {{skill[number]}}
+        </div>
+
+      </div>
+      <button class="btn button" (click)="incrementeducation()">+</button>
+      <div class="form-group">
+        <div *ngFor=" let number of getNumber(noOfEducations)">
+
+          <label for="degree{{number}}">List preferred degrees:</label>
+          <input type="text" class="form-control" id="degree{{number}}" ngModel="degree{{number}}" name="degree{{number}}">
+          {{degree[number]}}
+        </div>
+
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="submit()">Post</button>
+    </div>
+  </form>
+
+</div>
