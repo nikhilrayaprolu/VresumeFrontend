@@ -13,7 +13,9 @@ import { CV2Component } from './cv2/cv2.component';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { EmployerComponent } from './employer/employer.component';
 import {EmployerService} from "./employer.service";
-
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+import {UserService} from "./user.service";
 const appRoutes: Routes = [
   { path: 'signup', component: SignupComponentComponent },
   { path: 'signin', component: SignInComponent},
@@ -45,6 +47,7 @@ const appRoutes: Routes = [
     SignupService,
     CV1Service,
     EmployerService,
+    UserService,
   ],
   bootstrap: [AppComponent]
 })
