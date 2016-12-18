@@ -13,9 +13,6 @@ before_script:
 - ng build
 - npm install angular-cli-ghpages --save-dev
 
-script:
-- ng test --watch=false
-- ng lint
 
 after_success:
 - ng github-pages:deploy
