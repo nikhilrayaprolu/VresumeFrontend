@@ -18,6 +18,8 @@ import 'rxjs/add/operator/toPromise';
 import {UserService} from "./user.service";
 import { PostJobComponent } from './post-job/post-job.component';
 import {PostJobService} from "./post-job.service";
+import { VisualCvComponent } from './visual-cv/visual-cv.component';
+import {VisualCvService} from "./visual-cv.service";
 
 const appRoutes: Routes = [
   { path: 'signup', component: SignupComponentComponent },
@@ -26,6 +28,7 @@ const appRoutes: Routes = [
   { path: 'cv2', component: CV2Component},
   { path: 'employer', component: EmployerComponent},
   { path: 'job', component: PostJobComponent},
+  { path: 'viewcv', component: VisualCvComponent},
 
 
 ];
@@ -40,7 +43,8 @@ const appRoutes: Routes = [
     CV2Component,
     FileSelectDirective, FileDropDirective,
     EmployerComponent,
-    PostJobComponent
+    PostJobComponent,
+    VisualCvComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,7 @@ const appRoutes: Routes = [
     EmployerService,
     UserService,
     PostJobService,
+    VisualCvService,
   ],
   bootstrap: [AppComponent]
 })
