@@ -15,6 +15,7 @@ import { EmployerComponent } from './employer/employer.component';
 import {EmployerService} from "./employer.service";
 import { PostJobComponent } from './post-job/post-job.component';
 import {PostJobService} from "./post-job.service";
+import { EmployerSignUpComponent } from './employer-sign-up/employer-sign-up.component';
 
 const appRoutes: Routes = [
   { path: 'signup', component: SignupComponentComponent },
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     CV2Component,
     FileSelectDirective, FileDropDirective,
     EmployerComponent,
-    PostJobComponent
+    PostJobComponent,
+    EmployerSignUpComponent
   ],
   imports: [
     BrowserModule,

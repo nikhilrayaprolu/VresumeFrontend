@@ -20,7 +20,7 @@ export class SignupComponentComponent implements OnInit {
   submit(){
 
     this.usernamefinal=this.signupService.getUserData().filter((elem,i,array)=>{
-      return elem.id==2;
+      return elem.id==1;
 
     });
     console.log(this.usernamefinal);
