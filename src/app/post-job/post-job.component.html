@@ -25,7 +25,7 @@
         <div *ngFor=" let number of getNumber(noOfResp)">
 
           <label for="resp{{number}}">Responsibilities (Work Profile):</label>
-          <input type="text" class="form-control" id="resp{{number}}" [(ngModel)]="resp{{number}}" name="resp{{number}}">
+          <input type="text" class="form-control" id="resp{{number}}" [(ngModel)]="resp[number]" name="resp{{number}}">
           {{resp[number]}}
         </div>
       </div>
@@ -62,7 +62,7 @@
         <div *ngFor=" let number of getNumber(noOfSkills)">
 
           <label for="skill{{number}}">List required skills:</label>
-          <input type="text" class="form-control" id="skill{{number}}" [(ngModel)]="skill{{number}}" name="skill{{number}}">
+          <input type="text" class="form-control" id="skill{{number}}" [(ngModel)]="skill[number]" name="skill{{number}}">
           {{skill[number]}}
         </div>
 
@@ -72,7 +72,7 @@
         <div *ngFor=" let number of getNumber(noOfEducations)">
 
           <label for="degree{{number}}">List preferred degrees:</label>
-          <input type="text" class="form-control" id="degree{{number}}" [(ngModel)]="degree{{number}}" name="degree{{number}}">
+          <input type="text" class="form-control" id="degree{{number}}" [(ngModel)]="degree[number]" name="degree{{number}}">
           {{degree[number]}}
         </div>
 

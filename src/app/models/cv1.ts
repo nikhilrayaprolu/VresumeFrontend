@@ -7,7 +7,7 @@ export class cv1{
   location:string;
   wexp:number;
   profileDesc:string;
-  keySkills:string;
+  keySkills:string[];
   industry:string;
   functional_area:string;
   arr:string[];

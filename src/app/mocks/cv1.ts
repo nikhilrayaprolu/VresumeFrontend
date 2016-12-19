@@ -8,7 +8,7 @@ export const CV1: cv1[] = [{
   location: 'nalgonda',
   wexp: 100,
   profileDesc: 'thope developer',
-  keySkills: 'thope thoper thopest',
+  keySkills: ['thope' ,'thoper' ,'thopest'],
   industry: 'management',
   functional_area: 'enterpreneur',
   arr:['Btech', 'MBA'],
