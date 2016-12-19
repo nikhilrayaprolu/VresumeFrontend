@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../models/user";
 import {SignupService} from "../signup.service";
+import {UserService} from "../user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-in',
@@ -9,20 +11,23 @@ import {SignupService} from "../signup.service";
 })
 export class SignInComponent implements OnInit {
 
-  username='';
+  username='raj1';
   password='';
 
   usernamefinal:User[];
-  submit(){
+  constructor(private userService: UserService, private router: Router) {}
 
-    this.usernamefinal=this.signupService.getUserData().filter((elem,i,array)=>{
-      return elem.id==1;
-
+  submit() {
+    this.userService.login(this.username, this.password).subscribe((result) => {
+      if (result) {
+        this.router.navigate(['']);
+      }
     });
-    console.log(this.usernamefinal);
   }
-  constructor(private signupService: SignupService) { }
   ngOnInit() {
   }
+
+}
+export class LoginComponent {
 
 }

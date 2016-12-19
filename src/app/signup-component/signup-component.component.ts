@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SignupService} from "../signup.service";
 import {User} from "../models/user";
+import {UserService} from "../user.service";
 
 @Component({
   selector: 'app-root',
@@ -18,14 +19,15 @@ export class SignupComponentComponent implements OnInit {
 
   usernamefinal:User[];
   submit(){
-
-    this.usernamefinal=this.signupService.getUserData().filter((elem,i,array)=>{
-      return elem.id==1;
-
+    this.UserService.register({username:this.username,password:this.password,FirstName:this.FirstName,LastName:this.LastName,email:this.email,
+        phone:this.phone,
+    dob:this.dob}).subscribe((result) => {
+      if (result) {
+         console.log(result)
+      }
     });
-    console.log(this.usernamefinal);
   }
-  constructor(private signupService: SignupService) { }
+  constructor(private UserService: UserService) { }
 
   ngOnInit() {
   }

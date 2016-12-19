@@ -8,17 +8,17 @@ import {cv1} from "../models/cv1";
   styleUrls: ['./cv1.component.css']
 })
 export class CV1Component implements OnInit {
-
-  location='';
-  wexp='';
-  profileDesc='';
+username='nikhil1'
+  Location='';
+  wexp:number=null;
+  ProfileDescription='';
   keySkills='';
   industry='';
   functional_area='';
   noOfEducations=1;
   arr=[];
-  fullName='';
-  mobileNumber='';
+  FullName='';
+  MobileNumber='';
   cvfilled:cv1[];
   incrementeducation(){
   this.noOfEducations+=1;
@@ -30,15 +30,45 @@ export class CV1Component implements OnInit {
 
   submit(){
 
-    this.cvfilled=this.CV1Service.getCVData().filter((elem,i,array)=>{
-      return elem.id==2;
+    this.CV1Service.postCVData({
+      FullName:this.FullName,
+      MobileNumber:this.MobileNumber,
+      username:this.username,
+      Location:this.Location,
+      WorkExperience:this.wexp,
+      ProfileDescription:this.ProfileDescription,
+      Keyskills:this.keySkills,
+      Industry:this.industry,
+      FunctionalArea:this.functional_area,
 
-    });
+      EducationBackGround:this.arr,
+
+    }).subscribe(res=>
+    console.log(res))
     console.log(this.cvfilled);
   }
   constructor(private CV1Service: CV1Service) { }
 
   ngOnInit() {
+    this.CV1Service.getCVData().subscribe(res=>{
+      if(res!={}){
+
+
+      this.FullName=res.FullName;
+      this.MobileNumber=res.MobileNumber;
+      this.username=res.username;
+      this.Location=res.Location;
+      this.wexp=res.WorkExperience;
+      this.ProfileDescription=res.ProfileDescription;
+      this.keySkills=res.keySkills
+      this.industry=res.industry;
+      this.functional_area=res.functional_area;
+
+      this.arr=res.EducationBackGround
+      }
+    }
+
+  )
   }
 
 }

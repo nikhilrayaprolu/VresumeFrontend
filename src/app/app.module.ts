@@ -13,9 +13,18 @@ import { CV2Component } from './cv2/cv2.component';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { EmployerComponent } from './employer/employer.component';
 import {EmployerService} from "./employer.service";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+import {UserService} from "./user.service";
 import { PostJobComponent } from './post-job/post-job.component';
 import {PostJobService} from "./post-job.service";
+<<<<<<< HEAD
 import { EmployerSignUpComponent } from './employer-sign-up/employer-sign-up.component';
+=======
+import { VisualCvComponent } from './visual-cv/visual-cv.component';
+import {VisualCvService} from "./visual-cv.service";
+import { VideoUploadComponent } from './video-upload/video-upload.component';
+>>>>>>> e2fb3589e28338acd1000ece74d752310dfdb498
 
 const appRoutes: Routes = [
   { path: 'signup', component: SignupComponentComponent },
@@ -24,6 +33,7 @@ const appRoutes: Routes = [
   { path: 'cv2', component: CV2Component},
   { path: 'employer', component: EmployerComponent},
   { path: 'job', component: PostJobComponent},
+  { path: 'viewcv', component: VisualCvComponent},
 
 
 ];
@@ -39,7 +49,12 @@ const appRoutes: Routes = [
     FileSelectDirective, FileDropDirective,
     EmployerComponent,
     PostJobComponent,
+<<<<<<< HEAD
     EmployerSignUpComponent
+=======
+    VisualCvComponent,
+    VideoUploadComponent
+>>>>>>> e2fb3589e28338acd1000ece74d752310dfdb498
   ],
   imports: [
     BrowserModule,
@@ -51,7 +66,9 @@ const appRoutes: Routes = [
     SignupService,
     CV1Service,
     EmployerService,
+    UserService,
     PostJobService,
+    VisualCvService,
   ],
   bootstrap: [AppComponent]
 })
