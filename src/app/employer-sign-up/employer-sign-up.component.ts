@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {SignupService} from "../signup.service";
-import {User} from "../models/user";
 import {UserService} from "../user.service";
+import {User} from "../models/user";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './signup-component.component.html',
-  styleUrls: ['./signup-component.component.css']
+  selector: 'app-employer-sign-up',
+  templateUrl: './employer-sign-up.component.html',
+  styleUrls: ['./employer-sign-up.component.css']
 })
-export class SignupComponentComponent implements OnInit {
+export class EmployerSignUpComponent implements OnInit {
+
   username='';
   password='';
   FirstName='';
@@ -20,10 +20,10 @@ export class SignupComponentComponent implements OnInit {
   usernamefinal:User[];
   submit(){
     this.UserService.register({username:this.username,password:this.password,FirstName:this.FirstName,LastName:this.LastName,email:this.email,
-        phone:this.phone, dob:this.dob,
-    userType:"jobSeeker"}).subscribe((result) => {
+      phone:this.phone, dob:this.dob,
+    userType:"employer"}).subscribe((result) => {
       if (result) {
-         console.log(result)
+        console.log(result)
       }
     });
   }
