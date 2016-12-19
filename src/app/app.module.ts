@@ -20,6 +20,7 @@ import { PostJobComponent } from './post-job/post-job.component';
 import {PostJobService} from "./post-job.service";
 import { VisualCvComponent } from './visual-cv/visual-cv.component';
 import {VisualCvService} from "./visual-cv.service";
+import { VideoUploadComponent } from './video-upload/video-upload.component';
 
 const appRoutes: Routes = [
   { path: 'signup', component: SignupComponentComponent },
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
     FileSelectDirective, FileDropDirective,
     EmployerComponent,
     PostJobComponent,
-    VisualCvComponent
+    VisualCvComponent,
+    VideoUploadComponent
   ],
   imports: [
     BrowserModule,
