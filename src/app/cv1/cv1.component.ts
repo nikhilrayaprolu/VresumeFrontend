@@ -8,7 +8,7 @@ import {cv1} from "../models/cv1";
   styleUrls: ['./cv1.component.css']
 })
 export class CV1Component implements OnInit {
-
+username=''
   location='';
   wexp='';
   profileDesc='';
@@ -30,10 +30,21 @@ export class CV1Component implements OnInit {
 
   submit(){
 
-    this.cvfilled=this.CV1Service.getCVData().filter((elem,i,array)=>{
-      return elem.id==2;
+    this.CV1Service.postCVData({
+      FullName:this.fullName,
+      MobileNumber:this.mobileNumber,
+      userid:this.username,
+      Location:this.location,
+      WorkExperience:this.wexp,
+      ProfileDescription:this.profileDesc,
+      Keyskills:this.keySkills,
+      Industry:this.industry,
+      FunctionalArea:this.functional_area,
 
-    });
+      EducationBackGround:this.arr,
+
+    }).subscribe(res=>
+    console.log(res))
     console.log(this.cvfilled);
   }
   constructor(private CV1Service: CV1Service) { }
