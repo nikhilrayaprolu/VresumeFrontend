@@ -20,7 +20,7 @@ export class SignInComponent implements OnInit {
   submit() {
     this.userService.login(this.username, this.password).subscribe((result) => {
       if (result) {
-        this.router.navigate(['']);
+        this.router.navigate(['signup']);
       }
     });
   }

@@ -21,6 +21,9 @@ import {PostJobService} from "./post-job.service";
 import { VisualCvComponent } from './visual-cv/visual-cv.component';
 import {VisualCvService} from "./visual-cv.service";
 import { VideoUploadComponent } from './video-upload/video-upload.component';
+import {CV2Service} from "./cv2.service";
+import { SocialloginComponent } from './sociallogin/sociallogin.component';
+import { FacebookcallbackComponent } from './facebookcallback/facebookcallback.component';
 
 const appRoutes: Routes = [
   { path: 'signup', component: SignupComponentComponent },
@@ -30,8 +33,9 @@ const appRoutes: Routes = [
   { path: 'employer', component: EmployerComponent},
   { path: 'job', component: PostJobComponent},
   { path: 'viewcv', component: VisualCvComponent},
-
-
+  { path: 'uploadvideo', component: VideoUploadComponent},
+  { path: 'sociallogin',component:SocialloginComponent},
+  {path:'auth/facebook/callback/',component:FacebookcallbackComponent}
 ];
 
 
@@ -46,12 +50,15 @@ const appRoutes: Routes = [
     EmployerComponent,
     PostJobComponent,
     VisualCvComponent,
-    VideoUploadComponent
+    VideoUploadComponent,
+    SocialloginComponent,
+    FacebookcallbackComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
@@ -61,6 +68,7 @@ const appRoutes: Routes = [
     UserService,
     PostJobService,
     VisualCvService,
+    CV2Service
   ],
   bootstrap: [AppComponent]
 })

@@ -1,9 +1,18 @@
-<h1>
-  {{title}}
-</h1>
-  <nav>
-    <a routerLink="/signup" routerLinkActive="active">Signup</a>
-    <a routerLink="/viewcv" routerLinkActive="active">CV View</a>
-  </nav>
-  <router-outlet></router-outlet>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Vresume</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/signup" routerLinkActive="active">Signup</a></li>
+      <li><a routerLink="/signin" routerLinkActive="active">Signin</a></li>
+      <li><a routerLink="/signin" routerLinkActive="active">Signin</a></li>
+      <li><a routerLink="/signin" routerLinkActive="active">Signin</a></li>
+      <li><a (click)="signout()" >Signout</a></li>
+      <li><a routerLink="/viewcv" routerLinkActive="active">CV View</a></li>
+      <li>welcome {{username}}</li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
 

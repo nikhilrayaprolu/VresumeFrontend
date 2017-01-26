@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class CV1Service {
   cv:cv1[];
-  username='nikhil1';
+  username=localStorage.getItem('username');
   constructor(private http: Http) {
     this.cv=CV1;
   }
@@ -22,7 +22,7 @@ export class CV1Service {
       .map(res=>{
         console.log(res);
         if(res==null)
-          return {}
+          return JSON.stringify({})
         return res;
       });
   }

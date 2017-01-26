@@ -8,7 +8,7 @@ import {cv1} from "../models/cv1";
   styleUrls: ['./cv1.component.css']
 })
 export class CV1Component implements OnInit {
-username='nikhil1'
+username=localStorage.getItem('username')
   Location='';
   wexp:number=null;
   ProfileDescription='';
@@ -47,12 +47,16 @@ username='nikhil1'
     console.log(res))
     console.log(this.cvfilled);
   }
-  constructor(private CV1Service: CV1Service) { }
+  constructor(private CV1Service: CV1Service) {
+
+
+  }
 
   ngOnInit() {
     this.CV1Service.getCVData().subscribe(res=>{
-      if(res!={}){
-
+      console.log(res);
+      if(res!=JSON.stringify({})){
+      console.log("camehere")
 
       this.FullName=res.FullName;
       this.MobileNumber=res.MobileNumber;

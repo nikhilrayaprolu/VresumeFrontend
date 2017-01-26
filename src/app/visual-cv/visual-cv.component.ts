@@ -16,12 +16,17 @@ export class VisualCvComponent implements OnInit {
     return Array.apply(null, {length: N}).map(Number.call, Number);
   };
   constructor(private VisualCvService: VisualCvService){
-    this.cv=this.VisualCvService.getCVData();
+
   }
 
 
   ngOnInit() {
-    this.user=this.VisualCvService.getUserData();
+    this.VisualCvService.getCV1Data().subscribe(res=>{
+      this.cv=res;
+    });
+    this.VisualCvService.getUserData().subscribe(res=>{
+      this.user=res;
+    });
 
   }
 
