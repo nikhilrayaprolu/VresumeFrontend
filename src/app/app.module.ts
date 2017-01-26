@@ -18,6 +18,7 @@ import 'rxjs/add/operator/toPromise';
 import {UserService} from "./user.service";
 import { PostJobComponent } from './post-job/post-job.component';
 import {PostJobService} from "./post-job.service";
+import { EmployerSignUpComponent } from './employer-sign-up/employer-sign-up.component';
 import { VisualCvComponent } from './visual-cv/visual-cv.component';
 import {VisualCvService} from "./visual-cv.service";
 import { VideoUploadComponent } from './video-upload/video-upload.component';
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
   { path: 'viewcv', component: VisualCvComponent},
   { path: 'uploadvideo', component: VideoUploadComponent},
   { path: 'sociallogin',component:SocialloginComponent},
-  {path:'auth/facebook/callback/',component:FacebookcallbackComponent}
+  {path:'auth/facebook/callback/',component:FacebookcallbackComponent},
+  { path: 'employersignup', component: EmployerSignUpComponent},
 ];
 
 
@@ -49,6 +51,7 @@ const appRoutes: Routes = [
     FileSelectDirective, FileDropDirective,
     EmployerComponent,
     PostJobComponent,
+    EmployerSignUpComponent,
     VisualCvComponent,
     VideoUploadComponent,
     SocialloginComponent,
