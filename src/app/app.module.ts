@@ -25,6 +25,16 @@ import { VideoUploadComponent } from './video-upload/video-upload.component';
 import {CV2Service} from "./cv2.service";
 import { SocialloginComponent } from './sociallogin/sociallogin.component';
 import { FacebookcallbackComponent } from './facebookcallback/facebookcallback.component';
+import { StoreModule } from '@ngrx/store';
+import {reducer} from "./reducers";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import { ShowcvComponent } from './showcv/showcv.component';
+import { ShowjobsComponent } from './showjobs/showjobs.component';
+import { ViewjobComponent } from './viewjob/viewjob.component';
+import {CommonModule} from "@angular/common";
+import { JobformComponent } from './jobform/jobform.component';
+import { SelectedcvsComponent } from './selectedcvs/selectedcvs.component';
+import { AppliedcvsComponent } from './appliedcvs/appliedcvs.component';
 
 const appRoutes: Routes = [
   { path: 'signup', component: SignupComponentComponent },
@@ -33,11 +43,15 @@ const appRoutes: Routes = [
   { path: 'cv2', component: CV2Component},
   { path: 'employer', component: EmployerComponent},
   { path: 'job', component: PostJobComponent},
-  { path: 'viewcv', component: VisualCvComponent},
+  { path: 'viewcv/:userid', component: VisualCvComponent},
   { path: 'uploadvideo', component: VideoUploadComponent},
   { path: 'sociallogin',component:SocialloginComponent},
   {path:'auth/facebook/callback/',component:FacebookcallbackComponent},
   { path: 'employersignup', component: EmployerSignUpComponent},
+  {path:'showcvs', component: ShowcvComponent},
+  {path:'showjobs',component:ShowjobsComponent},
+  {path:'viewjob/:jobid',component:ViewjobComponent},
+  {path:'jobform/:jobid',component:JobformComponent}
 ];
 
 
@@ -55,14 +69,22 @@ const appRoutes: Routes = [
     VisualCvComponent,
     VideoUploadComponent,
     SocialloginComponent,
-    FacebookcallbackComponent
+    FacebookcallbackComponent,
+    ShowcvComponent,
+    ShowjobsComponent,
+    ViewjobComponent,
+    JobformComponent,
+    SelectedcvsComponent,
+    AppliedcvsComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     HttpModule,
-
-    RouterModule.forRoot(appRoutes)
+    StoreModule.provideStore(reducer),
+    RouterModule.forRoot(appRoutes),
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
   ],
   providers: [
     SignupService,

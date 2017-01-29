@@ -1,0 +1,45 @@
+<input type="text" [(ngModel)]="jobid">
+<table class="table">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>jobTitle</th>
+    <th>jobDescription</th>
+    <th>industry</th>
+    <th>noOfResp</th>
+    <th>vac</th>
+    <th>timing</th>
+    <th>salary</th>
+    <th>perks</th>
+    <th>noOfSkills</th>
+    <th>noOfEducations</th>
+
+    <th>degree</th>
+    <th>skill</th>
+    <th>resp</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let job of jobs">
+    <td>{{job._id}}</td>
+    <td>{{job.jobTitle}}</td>
+    <td>{{job.jobDescription}}</td>
+    <td>{{job.industry}}</td>
+    <td>{{job.noOfResp}}</td>
+    <td>{{job.vac}}</td>
+    <td>{{job.timing}}</td>
+    <td>{{job.salary}}</td>
+    <td>{{job.perks}}</td>
+    <td>{{job.noOfSkills}}</td>
+    <td>{{job.noOfEducations}}</td>
+
+    <td>{{job.degree}}</td>
+    <td>{{job.skill}}</td>
+    <td>{{job.resp}}</td>
+    <td>
+      <button (click)="applyjob(job._id)">Select</button>
+      <button (click)="viewjob(job._id)">View</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

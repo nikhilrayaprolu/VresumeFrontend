@@ -4,38 +4,45 @@ import {cv1} from "./models/cv1";
 import { Http, Headers } from '@angular/http';
 import {Observable} from "rxjs";
 import 'rxjs/add/operator/map'
+import {backend} from './config'
 @Injectable()
 export class CV1Service {
-  cv:cv1[];
-  username=localStorage.getItem('username');
-  constructor(private http: Http) {
-    this.cv=CV1;
-  }
-  /*getCVData(){
-    return this.cv;
-  }*/
+  cv: cv1[];
 
-  getCVData(){
+
+  constructor(private http: Http) {
+    this.cv = CV1;
+  }
+
+  /*getCVData(){
+   return this.cv;
+   }*/
+
+  getCVData(username) {
     return this.http
-      .post('http://localhost:8081/getCV1',{username:this.username})
-      .map(res=>res.json())
-      .map(res=>{
-        console.log(res);
-        if(res==null)
+      .post(backend + 'getCV1', {username: username})
+      .map(res => res.json())
+      .map(res => {
+        if (res == null)
           return JSON.stringify({})
         return res;
       });
   }
 
-  postCVData(cvdata){
-    console.log(cvdata)
-  return this.http
-    .post('http://localhost:8081/CV1',cvdata).map(res=> res.json())
-    .map((res)=>{
-    console.log(res)
-      return res;
+  postCVData(cvdata) {
+    return this.http
+      .post(backend + 'CV1', cvdata).map(res => res.json())
+      .map((res) => {
+        return res;
       });
-    };
+  };
+
+  getlistofcvs() {
+    return this.http
+      .get(backend + 'allcvs').map(res => {
+        return res.json()
+      });
   }
+}
 
 

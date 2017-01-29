@@ -2,11 +2,8 @@
   <div class="alert alert-info">
     <strong>CONGRATS!</strong> You have successfully registered.
   </div>
-
   <h2>Professional and Educational details</h2>
-
   <form name="cv1form">
-
     <div class = "jumbotron">
       <h3>Your contact information</h3>
       <div class="form-group">
@@ -22,8 +19,6 @@
         <input type="text" class="form-control" id="loc" [(ngModel)]="location" name="location">
       </div>
     </div>
-
-
     <div class = "jumbotron">
       <h3>Your work experience</h3>
       <div class="form-inline">
@@ -49,21 +44,17 @@
         <input type="text" class="form-control" id="func-area" [(ngModel)]="functional_area" name="functionalArea">
       </div>
     </div>
-
     <div class = "jumbotron">
       <h3>Your educational background</h3>
       <button class="btn button" (click)="incrementeducation()">+</button>
       <div class="form-group">
         <div *ngFor=" let number of getNumber(noOfEducations)">
-
           <label for="degree{{number}}">List a degree:</label>
           <input type="text" class="form-control" id="degree{{number}}" [(ngModel)]="arr[number]" name="arr{{number}}">
           {{arr[number]}}
         </div>
-
       </div>
       <button type="submit" class="btn btn-primary" (click)="submit()">Next</button>
     </div>
   </form>
-
 </div>

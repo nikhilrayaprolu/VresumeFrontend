@@ -1,0 +1,38 @@
+<input type="text" [(ngModel)]="jobid">
+<table class="table">
+  <thead>
+  <tr>
+  <th>Id</th>
+  <th>EducationBackGround</th>
+  <th>FunctionalArea</th>
+  <th>Industhy</th>
+  <th>KeySkills</th>
+  <th>Profile Description</th>
+  <th>Work Experience</th>
+  <th>Location</th>
+  <th>Mobile Number</th>
+  <th>Full Name</th>
+  <th>UserName</th>
+  <th>View,Select</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cv of cvlists">
+    <td>{{cv.userid}}</td>
+    <td>{{cv.EducationBackGround}}</td>
+    <td>{{cv.FunctionalArea}}</td>
+    <td>{{cv.Industry}}</td>
+    <td>{{cv.Keyskills}}</td>
+    <td>{{cv.ProfileDescription}}</td>
+    <td>{{cv.WorkExperience}}</td>
+    <td>{{cv.Location}}</td>
+    <td>{{cv.MobileNumber}}</td>
+    <td>{{cv.FullName}}</td>
+    <td>{{cv.username}}</td>
+    <td>
+      <button (click)="selectcv(cv.userid)">Select</button>
+      <button (click)="viewcv(cv.userid)">View</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

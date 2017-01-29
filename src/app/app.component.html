@@ -6,11 +6,9 @@
     <ul class="nav navbar-nav">
       <li><a routerLink="/signup" routerLinkActive="active">Signup</a></li>
       <li><a routerLink="/signin" routerLinkActive="active">Signin</a></li>
-      <li><a routerLink="/signin" routerLinkActive="active">Signin</a></li>
-      <li><a routerLink="/signin" routerLinkActive="active">Signin</a></li>
       <li><a (click)="signout()" >Signout</a></li>
       <li><a routerLink="/viewcv" routerLinkActive="active">CV View</a></li>
-      <li>welcome {{username}}</li>
+      <li>welcome {{username$ | async}}</li>
     </ul>
   </div>
 </nav>

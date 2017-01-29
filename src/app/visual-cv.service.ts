@@ -12,11 +12,11 @@ import {Observable} from "rxjs";
 export class VisualCvService {
   cv:cv1;
   user:User;
-  getCV1Data(){
-    return this.cvservice.getCVData();
+  getCV1Data(userid){
+    return this.cvservice.getCVData(userid);
   }
-  getUserData(){
-    return this.userservice.getuserdata();
+  getUserData(userid){
+    return this.userservice.getuserdata(userid);
   }
 /*  getCV2Data(){
     return this.cv2service.getcv2data();

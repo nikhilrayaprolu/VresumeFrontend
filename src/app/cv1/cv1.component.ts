@@ -26,10 +26,7 @@ username=localStorage.getItem('username')
   getNumber(N){
   return Array.apply(null, {length: N}).map(Number.call, Number);
 };
-
-
   submit(){
-
     this.CV1Service.postCVData({
       FullName:this.FullName,
       MobileNumber:this.MobileNumber,
@@ -40,24 +37,16 @@ username=localStorage.getItem('username')
       Keyskills:this.keySkills,
       Industry:this.industry,
       FunctionalArea:this.functional_area,
-
       EducationBackGround:this.arr,
-
     }).subscribe(res=>
     console.log(res))
     console.log(this.cvfilled);
   }
-  constructor(private CV1Service: CV1Service) {
-
-
-  }
-
+  constructor(private CV1Service: CV1Service) {}
   ngOnInit() {
-    this.CV1Service.getCVData().subscribe(res=>{
+    this.CV1Service.getCVData(this.username ).subscribe(res=>{
       console.log(res);
       if(res!=JSON.stringify({})){
-      console.log("camehere")
-
       this.FullName=res.FullName;
       this.MobileNumber=res.MobileNumber;
       this.username=res.username;
@@ -67,12 +56,8 @@ username=localStorage.getItem('username')
       this.keySkills=res.keySkills
       this.industry=res.industry;
       this.functional_area=res.functional_area;
-
       this.arr=res.EducationBackGround
       }
-    }
-
-  )
+    })
   }
-
 }
